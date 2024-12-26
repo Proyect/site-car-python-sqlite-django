@@ -10,3 +10,4 @@ virtual\Scripts\activate
 #cargar  la base de datos
 
 #cargar servidor local
+python manage.py runserver

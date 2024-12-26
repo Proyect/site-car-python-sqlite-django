@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from autos import views
+from Site import views
 from .views import AutoAPIView, ImgAPIView, DescriptionAPIView
 
 router = routers.DefaultRouter()
