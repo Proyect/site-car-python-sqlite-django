@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Vehicle, Img, Description
 from .serializers import AutoSerializer, ImgSerializer, DescriptionSerializer
+from django.shortcuts import render, get_object_or_404
 
 class AutoAPIView(APIView):
     def get(self, request):
@@ -42,3 +43,11 @@ class DescriptionAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def home(request):   
+    return render(request, 'home.html')
+
+def detail(request):   
+    return render(request, 'ficha.html')
+
