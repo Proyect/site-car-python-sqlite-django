@@ -17,7 +17,7 @@ class Vehicle(models.Model):
         ('Híbrido', 'Híbrido'),
     ])
     descripcion = models.TextField(blank=True, null=True)
-    imagen_url = models.URLField(blank=True, null=True)
+    imagen_url = models.TextField(blank=True, null=True)
     
     def __str__(self):
         return f"{self.marca} {self.modelo} ({self.anio})"    
