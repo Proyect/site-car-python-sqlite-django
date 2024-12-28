@@ -55,10 +55,37 @@
           </div>
        </div>
       </div> 
+      <div class="row" id="list">
+        <div class="col text-center">
+          <h3>Etios</h3>
+          <p>2019 ! $85.6000</p>
+          
+          <img src="../static/img/car/etios.jpg" title="Modelo" class="img-thumbnail"/>
+        </div>
 
+      </div>   
       {% endblock %}
       {% block footer %}
         <script>
-          
+          document.addEventListener('DOMContentLoaded', () => {
+            const autoList = document.getElementById('list');
+            console.log("Start proccess");
+            fetch('../autos/?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(auto => {
+                        const listItem = document.createElement('div');
+                        listItem.innerHTML = `
+                            <h3> ${auto.marca} ${auto.modelo}  ${auto.id} </h3>
+                            <p> ${auto.anio} ! ${auto.precio}</p>
+                            <img   src="../static/img/car/${auto.imagen_url}" title="${auto.marca} ${auto.modelo}" > `;
+                        listItem.classList.add("col");
+                        console.log(listItem);
+                        autoList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching autos:', error));
+        });
+        
         </script>
       {% endblock %}
