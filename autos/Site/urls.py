@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from .views import AutoAPIView, ImgAPIView, DescriptionAPIView,home
+from .views import AutoAPIView, ImgAPIView, DescriptionAPIView,home, detail
 
 router = routers.DefaultRouter()
 
@@ -12,4 +12,5 @@ urlpatterns = [
     path('imagenes/', ImgAPIView.as_view(), name='imagenes_api'),
     path('publicaciones/', DescriptionAPIView.as_view(), name='publicaciones_api'),
     path('sitio/', home, name='home'),
+    path('detalle/', detail, name="detail"),
 ]
