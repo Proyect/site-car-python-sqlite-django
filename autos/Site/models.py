@@ -25,6 +25,7 @@ class Vehicle(models.Model):
 class Img(models.Model):
     vehicle = models.ForeignKey("Vehicle",on_delete=models.CASCADE)
     url = models.CharField(max_length=200 )
+    descripcion = models.TextField(blank=True, null=True)
     state = models.CharField(max_length=50, choices=[("on","on"),("off","off")],default=["on"])
     
     def __str__(self):
