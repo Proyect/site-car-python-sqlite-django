@@ -48,9 +48,9 @@ class DescriptionAPIView(APIView):
 def home(request):   
     return render(request, 'home.html')
 
-def detail(request):  
-    detailBD = Description.objects.get(id=1)
-    imgBD = Img.objects.get(vehicle=1)
+def detail(request,vehicle):  
+    detailBD = Description.objects.filter(vehicle=vehicle)
+    imgBD = Img.objects.filter(vehicle=vehicle)
     context = {'detail':detailBD, 'img': imgBD}
     return render(request, 'detail.html', context)
 

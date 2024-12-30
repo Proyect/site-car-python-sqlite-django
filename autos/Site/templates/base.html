@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container-fluid">        
-        
+        <div class="p-auto m-auto">
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <img src="../static/img/logo.svg" Title="Logo">
@@ -94,12 +94,13 @@
               </div>
             </div>
           </nav>
-          <main class="container">
-
-
+        </div>
+        <hr/>  
+        <div class="container pt-5">
+           
 
           {% block content %}{% endblock %}
-          </main>
+          </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
 

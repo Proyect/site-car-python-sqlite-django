@@ -12,5 +12,5 @@ urlpatterns = [
     path('imagenes/', ImgAPIView.as_view(), name='imagenes_api'),
     path('publicaciones/', DescriptionAPIView.as_view(), name='publicaciones_api'),
     path('sitio/', home, name='home'),
-    path('detalle/', detail, name="detail"),
+    path('detalle/<int:vehicle>', detail, name="detail"),
 ]
