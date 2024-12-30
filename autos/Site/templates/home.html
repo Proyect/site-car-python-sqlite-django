@@ -70,9 +70,9 @@
                     data.forEach(auto => {
                         const listItem = document.createElement('div');
                         listItem.innerHTML = `<div class="text-center">
-                            <h3> ${auto.marca} ${auto.modelo}  ${auto.id} </h3>
+                            <h3> ${auto.marca} ${auto.modelo}  </h3>
                             <p> ${auto.anio} │ ${auto.precio}</p>
-                            <img   src="../static/img/car/${auto.imagen_url}" title="${auto.marca} ${auto.modelo}" > 
+                            <img   src="../static/img/car/${auto.imagen_url}" title="${auto.marca} ${auto.modelo} ${auto.id}" > 
                             </div>`;
                         listItem.classList.add("col");
                         console.log(listItem);
