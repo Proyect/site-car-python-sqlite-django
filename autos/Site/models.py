@@ -1,16 +1,17 @@
 from django.db import models
 
 class Vehicle(models.Model):
-    marca = models.CharField(max_length=50)
+    marca = models.CharField(max_length=20, choices=[("Ford","Ford"), ("Fiat","Fiat"), 
+                            ("Audi", "Audi"),("Renault", "Renault")]) 
     modelo = models.CharField(max_length=50)
     anio = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     motor = models.CharField(max_length=50)
-    transmision = models.CharField(max_length=50, choices=[
+    transmision = models.CharField(max_length=20, choices=[
         ('Manual', 'Manual'),
         ('Automática', 'Automática'),
     ])
-    combustible = models.CharField(max_length=50, choices=[
+    combustible = models.CharField(max_length=20, choices=[
         ('Gasolina', 'Gasolina'),
         ('Diésel', 'Diésel'),
         ('Eléctrico', 'Eléctrico'),
